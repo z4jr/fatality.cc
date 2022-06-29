@@ -452,11 +452,7 @@ Duration = 1;
             wait(0.2)
         end
         if getgenv().antilock then
-game.StarterGui:SetCore("SendNotification", {
-Title = "fatality.cc";
-Text = "anti lock is broken cuz moonsec bad";
-Duration = 1;
-})
+    getgenv().antilock = bool
         end
         if getgenv().DesyncEnabled then
                 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Velocity = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * getgenv().DesyncVelocity
@@ -836,11 +832,7 @@ end})
 local section1 = tab3:section({name = "movement",side = "left",size = 200})
 
 section1:toggle({name = " enable cframe",def = false, callback = function(bool)
-    game.StarterGui:SetCore("SendNotification", {
-Title = "fatality.cc";
-Text = "CFrame is broken cuz moonsec bad";
-Duration = 3;
-})
+    getgenv().cframespeedtoggle = bool
 end})
 section1:slider({name = "cframe speed",def = 1, max = 20,min = 1,rounding = false,ticking = false,measuring = "",callback = function(value)
     getgenv().speedvalue = value
